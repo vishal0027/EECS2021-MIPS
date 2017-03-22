@@ -1,0 +1,33 @@
+	
+			STACK
+	#-----------------------------------------------------------
+		sw	$ra, 0($sp)
+		addi	$sp, $sp, -4	#push ra
+	#-----------------------------------------------------------
+	#------------------------------------------------------------
+		addi	$sp, $sp, 4
+		lw	$ra, 0($sp)	#pop ra
+	#------------------------------------------------------------
+			HEAP
+
+		add	$t5, $0, $a0	#temporary storing a0
+	
+	#-------------------Heap--------------------------#
+		addi	$v0, $0, 9	
+		addi	$a0, $0, 4	# allocating memorary for two parameter
+		syscall			# v0 = address of 4B block
+	#-------------------------------------------------#
+		
+		add	$a0, $0, $t5	# get back the a0 parameter
+		sw	$a0, 0($v0)	# store argument one to heap
+
+
+			FOR LOOP
+		
+	loop:	slt $t9, $t5, $t0	#t5<t0 (Comparision i< something)
+		beq $t9, $0, out 	#if t9 == 0(loop in-varient)
+		add $s0, $s0, $t5	# s0 = s0+t5(Task)
+		addi $t5, $t5, 1	# t5 = t5+1;(i++)
+		j loop
+
+		
