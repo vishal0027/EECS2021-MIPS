@@ -15,7 +15,7 @@ loop:		slt	$t9, $t5, $t0	#t5<t0 (Comparision i< something)
 		mult 	$t3, $t3
 		mflo	$t3
 		
-		add 	$t2, $t2, $t3	# s0 = s0+t5(Task)
+		addu 	$t2, $t2, $t3	# s0 = s0+t5(Task)
 		addi 	$t5, $t5, 1	# t5 = t5+1;(i++)
 		j loop
 ex:
