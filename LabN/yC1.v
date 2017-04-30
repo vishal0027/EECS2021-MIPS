@@ -11,6 +11,6 @@ not (not0, opCode[0]);
 and (rtype, not5, not4, not3, not2, not1, not0);			//--------R-Type(000000)---------
 and (jump, not5, not4, not3, not2, opCode[1], not0);			//--------Jump(000010)-----------
 and (branch, not5, not4,not3, opCode[2], not1, not0);			//--------branch(000100)---------
-and (sw, opCode[5], not4 ,not3, opCode[2], opCode[1], opCode[0]);	//--------sw(101011)-------------
+and (sw, opCode[5], not4 ,opCode[2], not2, opCode[1], opCode[0]);	//--------sw(101011)-------------
 and (lw, opCode[5], not4, not3, not2, opCode[1], opCode[0]);		//--------lw(100011)-------------
 endmodule
